@@ -1,12 +1,28 @@
 package ru.mirea.task3;
 
-public class Circle {
-    private int radius, x, y;
+public class Circle implements Comparable<Circle> {
+    private Point center;
+    private int radius;
     private String color;
-    public Circle(int radius, int x, int y, String color){
-        this.x = x;
-        this.y = y;
+    Circle(Point center, String color, int radius){
+        this.center=center;
+        this.color=color;
         this.radius = radius;
+    }
+
+    public Point getCenter() {
+        return center;
+    }
+
+    public void setCenter(Point center) {
+        this.center = center;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
         this.color = color;
     }
 
@@ -14,34 +30,15 @@ public class Circle {
         return radius;
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
     public void setRadius(int radius) {
         this.radius = radius;
     }
 
-    public void setX(int x) {
-        this.x = x;
+    public int compareTo(Circle other){
+        return Integer.compare(radius, other.radius);
     }
 
-    public void setY(int y) {
-        this.y = y;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
     public String toString(){
-        return "Круг ("+x+", "+y+"), радиус "+radius+", цвет "+color;
+        return "Circle ("+center.getX()+", "+center.getY()+"), radius: "+radius+", color: "+color;
     }
 }
