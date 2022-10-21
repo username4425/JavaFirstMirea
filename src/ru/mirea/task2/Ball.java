@@ -1,30 +1,42 @@
 package ru.mirea.task2;
 
 public class Ball {
-    public enum Type{
-        Football("Футбольный"),
-        Basketball("Баскетбольный"),
-        Volleyball("Волейбольный");
-        private String title;
-        Type(String s){
-            title = s;
-        }
-        public String toString(){
-            return title;
-        }
-    }
-    private Type type;
-    private int cost;
-    public Ball(int cost, Type type) {
-        this.cost = cost;
-        this.type = type;
+    private  double x,y;
+
+    Ball(){}
+
+    Ball(double x, double y){
+        this.x=x;
+        this.y=y;
     }
 
-    public void setCost(int cost){
-        this.cost = cost;
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public void setXY(double x, double y){
+        this.x=x;
+        this.y=y;
+    }
+
+    public void move(double xDisp, double yDisp){
+        x+=xDisp;
+        y+=yDisp;
     }
 
     public String toString(){
-        return type + " мяч, цена: "+cost;
+        return "Координаты мяча: "+x+", "+y;
     }
 }
