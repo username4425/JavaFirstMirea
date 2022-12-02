@@ -11,7 +11,6 @@ public class Task5Exs3 {
     public static void main(String[] args){
         JFrame mainframe= new JFrame("exs3");
         mainframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainframe.setSize(300,300);
         JPanel mainpanel=new JPanel(){
             @Override
             public void paint(Graphics g){
@@ -25,6 +24,7 @@ public class Task5Exs3 {
             }
         };
         mainframe.add(mainpanel);
+        mainframe.setSize(300,300);
         mainframe.setVisible(true);
     }
 }
